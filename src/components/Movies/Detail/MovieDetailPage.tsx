@@ -37,7 +37,10 @@ const MovieDetailPage = ({ movie }: { movie: MovieType }) => {
       </Box>
 
       <Box sx={{ px: 3, pt: 2 }}>
-        <Box sx={{ display: "flex", flexDirection: "row", gap: 2, pb: 2 }}>
+        <Box
+          key={movie.id}
+          sx={{ display: "flex", flexDirection: "row", gap: 2, pb: 2 }}
+        >
           {movie.genre.map((genre) => (
             <>
               <Button

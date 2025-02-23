@@ -1,20 +1,20 @@
 import AppShell from "@/components/layouts/AppShell/AppShell";
 import { Suspense } from "react";
-import MovieSkeleton from "@/components/Skeleton/MovieSkeleton";
 import MovieDetailPage from "@/components/Movies/Detail/MovieDetailPage";
+import { getMovie } from "@/app/movie/getMovie";
+import Loading from "@/components/Loading/Loading";
+const MovieContent = async ({ movieId }: { movieId: string }) => {
+  const movie = await getMovie(movieId);
+  return <MovieDetailPage movie={movie} />;
+};
 
 const MovieDetail = async ({ params }: { params: { movieId: string } }) => {
   const { movieId } = await params;
 
-  const res = await fetch(`http://localhost:5000/movies/${movieId}`, {
-    cache: "no-store",
-  });
-  const movie = await res.json();
-
   return (
     <AppShell>
-      <Suspense fallback={<MovieSkeleton />}>
-        <MovieDetailPage movie={movie} />
+      <Suspense fallback={Loading()}>
+        <MovieContent movieId={movieId} />
       </Suspense>
     </AppShell>
   );

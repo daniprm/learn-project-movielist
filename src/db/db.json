@@ -541,6 +541,16 @@
       "movieId": "7",
       "comment": "Film yang bagus sekali",
       "id": 7
+    },
+    {
+      "movieId": "3",
+      "comment": "tes",
+      "id": 8
+    },
+    {
+      "movieId": "3",
+      "comment": "tes lagi",
+      "id": 9
     }
   ]
 }

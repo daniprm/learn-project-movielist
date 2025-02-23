@@ -3,10 +3,16 @@ import { Button } from "@mui/material";
 interface PropsType {
   movieId: string;
   comment?: string;
-  onCommentAdded: () => void; // Callback untuk update komentar
+  onCommentAdded: () => void;
+  setComment: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const CommentButton = ({ movieId, comment, onCommentAdded }: PropsType) => {
+const CommentButton = ({
+  movieId,
+  comment,
+  onCommentAdded,
+  setComment,
+}: PropsType) => {
   const handleComment = async () => {
     if (comment) {
       await fetch("http://localhost:5000/comments", {
@@ -18,6 +24,7 @@ const CommentButton = ({ movieId, comment, onCommentAdded }: PropsType) => {
       });
 
       onCommentAdded();
+      setComment("");
     }
   };
 

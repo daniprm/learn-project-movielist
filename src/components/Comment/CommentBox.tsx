@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import Comments from "./Comments";
+import CommentsWrapper from "./CommentsWrapper";
 
 const CommentBox = async ({ movieId }: { movieId: string }) => {
   return (
@@ -12,7 +12,7 @@ const CommentBox = async ({ movieId }: { movieId: string }) => {
         }}
         autoComplete="off"
       >
-        <Comments movieId={movieId} />
+        <CommentsWrapper movieId={movieId} />
       </Box>
     </>
   );
