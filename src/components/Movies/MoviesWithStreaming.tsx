@@ -5,17 +5,14 @@ import MovieList from "@/components/Movies/MovieList";
 
 const MoviesWithStreaming = ({ keyword }: { keyword: string }) => {
   const [movies, setMovies] = useState([]);
-  // const movies = await fetchMoviesWithDelay(keyword);
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch(
-        `http://localhost:5000/movies?${keyword}&_page={2}&_limit={}`,
-        {
-          cache: "no-store",
-        }
-      );
+      const res = await fetch(`http://localhost:5000/movies?${keyword}`, {
+        cache: "no-store",
+      });
       const movies = await res.json();
+      await new Promise((resolve) => setTimeout(resolve, 500));
 
       setMovies(movies);
     };

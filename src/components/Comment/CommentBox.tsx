@@ -1,7 +1,14 @@
 import { Box } from "@mui/material";
 import CommentsWrapper from "./CommentsWrapper";
+import { CommentType } from "@/types/Comment/CommentType";
 
-const CommentBox = async ({ movieId }: { movieId: string }) => {
+const CommentBox = ({
+  movieId,
+  commentsData,
+}: {
+  movieId: string;
+  commentsData: CommentType[];
+}) => {
   return (
     <>
       <Box
@@ -12,7 +19,7 @@ const CommentBox = async ({ movieId }: { movieId: string }) => {
         }}
         autoComplete="off"
       >
-        <CommentsWrapper movieId={movieId} />
+        <CommentsWrapper movieId={movieId} commentsData={commentsData} />
       </Box>
     </>
   );

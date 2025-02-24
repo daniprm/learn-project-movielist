@@ -3,16 +3,18 @@
 import AddComment from "./AddComment";
 import { useEffect, useState } from "react";
 import Comments from "./Comments";
+import { CommentType } from "@/types/Comment/CommentType";
+import { getData } from "@/Utilities/Movies/getData";
 
-interface CommentType {
-  id: number;
-  movieId: number;
-  comment: string;
-}
-
-const CommentsWrapper = ({ movieId }: { movieId: string }) => {
+const CommentsWrapper = ({
+  movieId,
+  commentsData,
+}: {
+  movieId: string;
+  commentsData: CommentType[];
+}) => {
   const [comment, setComment] = useState<string>("");
-  const [comments, setComments] = useState<CommentType[]>([]);
+  const [comments, setComments] = useState<CommentType[]>(commentsData);
   const [idComment, setIdComment] = useState<number | null>(null);
   const [editedComment, setEditedComment] = useState<string>("");
 
@@ -22,10 +24,8 @@ const CommentsWrapper = ({ movieId }: { movieId: string }) => {
 
   const fetchComments = async () => {
     try {
-      const res = await fetch(
-        `http://localhost:5000/comments?movieId=${movieId}`
-      );
-      const data = await res.json();
+      const query = `http://localhost:5000/comments?movieId=${movieId}`;
+      const data = await getData(query);
 
       setComments(data);
     } catch (error) {
