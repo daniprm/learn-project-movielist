@@ -412,22 +412,18 @@
       "id": "24"
     },
     {
-      "id": "6"
-    },
-    {
-      "id": "11"
-    },
-    {
-      "id": "2"
-    },
-    {
-      "id": "21"
+      "id": "4"
     },
     {
       "id": "1"
+    }
+  ],
+  "watched": [
+    {
+      "id": "6"
     },
     {
-      "id": "4"
+      "id": "8"
     }
   ],
   "actors": [
@@ -529,7 +525,7 @@
     },
     {
       "movieId": "2",
-      "comment": "asfasdfasdfasdfasdfasfasdfasfasdfasdfasdfasd",
+      "comment": "asfasdfasdfasdf",
       "id": 5
     },
     {
@@ -549,8 +545,38 @@
     },
     {
       "movieId": "3",
-      "comment": "tes lagi",
+      "comment": "tes lagi edited",
       "id": 9
+    },
+    {
+      "movieId": "6",
+      "comment": "Satu dua tiga",
+      "id": 10
+    },
+    {
+      "movieId": "1",
+      "comment": "Ini adalah komentarrr",
+      "id": 11
+    },
+    {
+      "movieId": "1",
+      "comment": "Ini juga komentar, tapi diedit",
+      "id": 12
+    },
+    {
+      "movieId": "1",
+      "comment": "ini juga",
+      "id": 13
+    },
+    {
+      "movieId": "2",
+      "comment": "tesss",
+      "id": 14
+    },
+    {
+      "movieId": "3",
+      "comment": "Ini film Batman",
+      "id": 15
     }
   ]
 }
